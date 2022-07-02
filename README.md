@@ -1,6 +1,8 @@
 # AWS S3 sync docker container
 An up to date cron s3 sync container, using the official aws cli image.
 
+# Sample docker-compose
+
 ---
 version: "2.1"
 services:
