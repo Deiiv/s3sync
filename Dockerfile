@@ -7,5 +7,5 @@ VOLUME ["/data"]
 ADD *.sh /
 RUN chmod +x /*.sh
 
-ENTRYPOINT ["/start.sh"]
+ENTRYPOINT ["sh","/run.sh"]
 CMD [""]
