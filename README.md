@@ -22,6 +22,7 @@ services:
       - AWS_DEFAULT_REGION=
       - BUCKET=
       - BUCKET_PATH=/
+      - PARAMS=                        #OPTIONAL
     volumes:
       - /your/data/to/sync:/data
     restart: unless-stopped
