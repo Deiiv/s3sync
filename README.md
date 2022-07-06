@@ -18,6 +18,7 @@ services:
       - AWS_DEFAULT_REGION=
       - BUCKET=
       - BUCKET_PATH=/
+      - CRON_SCHEDULE="0 1 * * *"   # OPTIONAL, defaults to "0 1 * * *"
     volumes:
       - /your/data/to/sync:/data
     restart: unless-stopped
