@@ -2,7 +2,7 @@
 
 set -e
 
-echo "$(date) - Starting sync job to $BUCKET$BUCKET_PATH"
+echo "$(date) - Starting sync job with command aws s3 sync /data s3://$BUCKET$BUCKET_PATH $PARAMS"
 
 aws s3 sync /data s3://$BUCKET$BUCKET_PATH $PARAMS
 
