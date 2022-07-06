@@ -13,7 +13,7 @@ ADD sync.sh /
 RUN chmod +x /sync.sh
 
 # create and run a cron file using env variable for the schedule
-RUN echo -e "$CRON_SCHEDULE /sync.sh 2>&1\n"| tr -d '"' > /etc/sync-cron &&\
+RUN echo -e "$CRON_SCHEDULE /sync.sh 2>&1\n" > /etc/sync-cron &&\
     crontab /etc/sync-cron
 
 CMD crond -f
