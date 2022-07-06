@@ -7,13 +7,14 @@ RUN apk --no-cache add \
     pip \
     awscli
 
-ENV AWS_ACCESS_KEY_ID=,AWS_SECRET_ACCESS_KEY=,AWS_DEFAULT_REGION=,BUCKET=,BUCKET_PATH=/,CRON_SCHEDULE="0 1 * * *",PARAMS=
-
 VOLUME ["/data"]
 
 ADD sync.sh /
 RUN chmod +x /sync.sh
 
-COPY ./sync-cron /etc/sync-cron
-RUN crontab /etc/sync-cron
+# create and run a cron file using env variable for the schedule
+# RUN printf '%s /sync.sh 2>&1\n' "$CRON_SCHEDULE" > /etc/sync-cron &&\
+RUN echo -e "$CRON_SCHEDULE /sync.sh 2>&1\n" > /etc/sync-cron &&\
+    crontab /etc/sync-cron
+
 CMD crond -f
