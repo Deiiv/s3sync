@@ -10,6 +10,10 @@ services:
   s3sync:
     image: deiiv/s3sync
     container_name: s3sync
+    # defaults to "0 7 * * *", currently has a bug where doesn't override
+    build:
+      args:
+        - CRON_SCHEDULE="0 7 * * *"
     environment:
       - PUID=
       - PGID=
@@ -18,7 +22,6 @@ services:
       - AWS_DEFAULT_REGION=
       - BUCKET=
       - BUCKET_PATH=/
-      - CRON_SCHEDULE=0 1 * * *
     volumes:
       - /your/data/to/sync:/data
     restart: unless-stopped
