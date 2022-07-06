@@ -3,6 +3,7 @@ An up to date cron s3 sync container, using the official aws cli image.
 
 # Sample docker-compose
 
+```yaml
 ---
 version: "2.1"
 services:
@@ -20,3 +21,4 @@ services:
     volumes:
       - /your/data/to/sync:/data
     restart: unless-stopped
+```
