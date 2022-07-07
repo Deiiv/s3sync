@@ -22,7 +22,7 @@ services:
       - AWS_DEFAULT_REGION=
       - BUCKET=
       - BUCKET_PATH=/
-      - PARAMS=                        #OPTIONAL
+      - PARAMS=                        #currently not working, arrays not support in bin/ash with alpine - OPTIONAL, must be an array, eg: PARAMS=('--exclude' '.somefile' '--exclude' 'somefolder/*')
     volumes:
       - /your/data/to/sync:/data
     restart: unless-stopped
