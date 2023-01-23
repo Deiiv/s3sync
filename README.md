@@ -26,6 +26,10 @@ services:
       - BUCKET=
       - BUCKET_PATH=/
       - PARAMS=                        #currently not working, arrays not support in bin/ash with alpine - OPTIONAL, must be an array, eg: PARAMS=('--exclude' '.somefile' '--exclude' 'somefolder/*')
+      - MQTT_HOST=
+      - MQTT_USER=
+      - MQTT_PW=
+      - MQTT_TOPIC=
     volumes:
       - /your/data/to/sync:/data
     restart: unless-stopped

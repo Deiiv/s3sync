@@ -2,7 +2,9 @@ FROM alpine:3.16.0
 
 RUN apk --no-cache add \
     py-pip \
-    python3 &&\
+    python3 \
+    mosquitto \
+    mosquitto-clients &&\
     pip install --upgrade \
     pip \
     awscli
