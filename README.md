@@ -4,6 +4,9 @@ A cron based s3 sync container
 docker build -t deiiv/s3sync:latest .
 docker push deiiv/s3sync:latest
 
+docker build -t deiiv/s3sync:v1.01 .
+docker push deiiv/s3sync:v1.01
+
 # Sample docker-compose
 
 ```yaml
