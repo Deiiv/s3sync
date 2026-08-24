@@ -6,8 +6,8 @@ docker push deiiv/s3sync:latest
 
 # increment on updates
 <!-- docker build -t deiiv/s3sync:v1.05 . -->
-docker buildx build --platform linux/amd64 -t deiiv/s3sync:v1.05 .
-docker push deiiv/s3sync:v1.05
+docker buildx build --platform linux/amd64 -t deiiv/s3sync:v1.06 .
+docker push deiiv/s3sync:v1.06
 
 # Sample docker-compose
 
